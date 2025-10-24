@@ -74,7 +74,7 @@
 >Our environment is cuda11.8+torch2.6.0.
 1. Clone this repository and navigate to the DeepSeek-OCR folder
 ```bash
-git clone https://github.com/deepseek-ai/DeepSeek-OCR.git
+git clone https://github.com/tiandaoyuxi/DeepSeek-OCR.git
 ```
 2. Conda
 ```Shell
