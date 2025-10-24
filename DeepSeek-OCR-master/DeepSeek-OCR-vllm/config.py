@@ -14,15 +14,15 @@ MAX_CONCURRENCY = 100 # If you have limited GPU memory, lower the concurrency co
 NUM_WORKERS = 64 # image pre-process (resize/padding) workers 
 PRINT_NUM_VIS_TOKENS = False
 SKIP_REPEAT = True
-MODEL_PATH = 'deepseek-ai/DeepSeek-OCR' # change to your model path
+MODEL_PATH = 'E:/Ollama/DeepSeek-OCR_models' # change to your model path
 
 # TODO: change INPUT_PATH
 # .pdf: run_dpsk_ocr_pdf.py; 
 # .jpg, .png, .jpeg: run_dpsk_ocr_image.py; 
 # Omnidocbench images path: run_dpsk_ocr_eval_batch.py
 
-INPUT_PATH = '' 
-OUTPUT_PATH = ''
+INPUT_PATH = 'E:/Ollama/image/教师用书：小学语文3a.pdf' 
+OUTPUT_PATH = 'E:/Ollama/output/教师用书：小学语文3a'
 
 PROMPT = '<image>\n<|grounding|>Convert the document to markdown.'
 # PROMPT = '<image>\nFree OCR.'

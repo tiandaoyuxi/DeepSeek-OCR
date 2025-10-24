@@ -6,19 +6,19 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = '0'
 
 
-model_name = 'deepseek-ai/DeepSeek-OCR'
+model_name = 'E:/Ollama/DeepSeek-OCR_models'
 
 
 tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-model = AutoModel.from_pretrained(model_name, _attn_implementation='flash_attention_2', trust_remote_code=True, use_safetensors=True)
+model = AutoModel.from_pretrained(model_name, trust_remote_code=True, use_safetensors=True)
 model = model.eval().cuda().to(torch.bfloat16)
 
 
 
 # prompt = "<image>\nFree OCR. "
 prompt = "<image>\n<|grounding|>Convert the document to markdown. "
-image_file = 'your_image.jpg'
-output_path = 'your/output/dir'
+image_file = 'E:/Ollama/image/群星我的归宿-概念海报.jpg'
+output_path = 'E:/Ollama/output'
 
 
 
