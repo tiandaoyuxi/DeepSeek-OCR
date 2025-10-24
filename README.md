@@ -55,10 +55,17 @@
 - [2025/10/20]🚀🚀🚀 We release DeepSeek-OCR, a model to investigate the role of vision encoders from an LLM-centric viewpoint.
 
 ## Contents
+- [Release](#release)
+- [Contents](#contents)
 - [Install](#install)
-- [vLLM Inference](#vllm-inference)
-- [Transformers Inference](#transformers-inference)
-  
+- [vLLM-Inference](#vllm-inference)
+- [Transformers-Inference](#transformers-inference)
+- [Support-Modes](#support-modes)
+- [Prompts examples](#prompts-examples)
+- [Visualizations](#visualizations)
+- [UI Demo](#ui-demo)
+- [Acknowledgement](#acknowledgement)
+- [Citation](#citation)
 
 
 
@@ -79,7 +86,8 @@ conda activate deepseek-ocr
 - download the vllm-0.8.5 [whl](https://github.com/vllm-project/vllm/releases/tag/v0.8.5) 
 ```Shell
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu118
-pip install vllm-0.8.5+cu118-cp38-abi3-manylinux1_x86_64.whl
+# pip install vllm-0.8.5+cu118-cp38-abi3-manylinux1_x86_64.whl
+pip install vllm-0.8.5+cu118-cp312-cp312-manylinux_x86_64.whl
 pip install -r requirements.txt
 pip install flash-attn==2.7.3 --no-build-isolation
 ```
@@ -162,6 +170,33 @@ The current open-source model supports the following modes:
 </tr>
 </table>
 
+## UI Demo
+我们提供了一个基于 Python Qt6 的交互式桌面 UI 界面，方便用户上传图片或 PDF 文件并进行 OCR 识别。
+
+**主要功能:**
+*   **模型加载**: 允许用户指定 DeepSeek-OCR 模型的本地路径。
+*   **输入选择**: 支持选择单个图片文件 (.png, .jpg, .jpeg, .bmp) 或 PDF 文件，也可以选择包含多个文件或子文件夹的目录。
+*   **输出设置**: 用户可以指定 OCR 结果的输出文件夹。
+*   **任务模式**: 提供 'markdown' (将文档转换为 Markdown 格式) 和 'ocr' (自由文本 OCR) 两种任务模式。
+*   **递归处理**: 对于选择的文件夹，可以选择是否递归处理其所有子文件夹中的文件。
+*   **进度与日志**: 实时显示处理进度和详细操作日志。
+*   **多线程**: OCR 任务在独立线程中运行，确保 UI 响应流畅。
+*   **中断任务**: 用户可以随时停止正在进行的 OCR 任务。
+
+**如何运行 UI:**
+1.  确保您已安装所有依赖项 (参见 [Install](#install) 部分)。
+2.  导航到 DeepSeek-OCR-master/DeepSeek-OCR-hf 目录:
+    ```bash
+    cd DeepSeek-OCR-master/DeepSeek-OCR-hf
+    ```
+3.  运行 UI 应用程序:
+    ```bash
+    python DeepSeek-OCR_ui.py
+    ```
+
+<p align="center">
+<img src="assets/UI.png" style="width: 1000px" align=center>
+</p>
 
 ## Acknowledgement
 
